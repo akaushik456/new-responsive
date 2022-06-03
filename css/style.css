@@ -33,16 +33,13 @@ nav{
 .menu-bar-links{
     width: 100%;
     background: #585858;
-    display: none;
 }
-.open{
-    display: block;
-}
-.menu-links{
-    display: block;
+.menu-links.open{
+    display: flex;
 }
 .menu-links{
     display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     align-items: end;
@@ -61,7 +58,6 @@ nav{
     color: #000;
     font-size: 22px;
     font-weight: 600;
-    
 }
 .work-area{
     width: 100%;
@@ -118,30 +114,37 @@ nav{
     text-align: center;
     width: 90%;
     height: 100%;
-    top: 36%;
+    top: 0;
     color: #fff;
     transition: all 0.5s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.animation-style h1{
+    letter-spacing: 7px;
 }
 .animation-hover{
     width: 100%;
     position: absolute;
-    bottom: 60%;
     text-align: center;
     transition: all 0.5s ease-in;
+    bottom: 0;
 }
 .animation-hover p{
     transition: all .5s ease-in;
     height: 100%;
     position: absolute;
-    opacity: 0;
-}
-.animation-hover p:hover .card-image img{
-    opacity: 0.7;
+    padding: 21px;
+    width: 100%;
     bottom: 0;
-    
+    top: 0;
+  
 }
-.card-image img:hover{
+.card-image img:hover .animation-hover p{
     transform: scale(1.2);
+    bottom: auto;
 }
 .section-2-work{
     width: 100%;
@@ -249,6 +252,16 @@ nav{
 .ml-border-social-icon li:hover{
     color: #f2849e;
     border: 1px solid #f2849e;
+}
+span{
+    color: #bbb;
+    margin-right: 25px;
+}
+span::after{
+    content: "";
+    position: absolute;
+    border: 1px solid #bbb;
+    height: 15px;
 }
 @media(max-width:1200px) {
     header{
@@ -614,7 +627,15 @@ nav{
     }
     .animation-style{
         width: 100%;
-        top: 11%;
+        top: 0;
+        height: 80%;
+    }
+    .ml-border-social-icon{
+        width: 100%;
+    }
+    .ml-border-social-icon li{
+        padding: 13px 10px;
+        margin-right: 18px;
     }
     /* foter area */
     .contact-area{
@@ -647,5 +668,19 @@ nav{
     }
     .cstm-btn a{
         padding: 13px 140px;
+    }
+    .menu-links h1{
+        width: 97%;
+    }
+    .menu-links li{
+        width: 100%;
+    }
+    .animation-hover{
+        padding: 10px;
+        height: 50%;
+        width: 100%;
+    }
+    .animation-hover p{
+        line-height: 20px;
     }
 }
